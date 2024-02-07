@@ -1,5 +1,17 @@
 <?php
-    echo 'Template PHP';
+    require_once __DIR__.'/partials/db.php';
+    require_once __DIR__.'/partials/variables.php';
+
+    $num = 22;
+
+    function sum($numOne, $numTwo) {
+        return $numOne + $numTwo;
+    }
+
+    echo '<div>Il frutto '.$fruit.' è '.$color.'</div>';
+
+    $fruit = 'banana';
+    $color = 'yellow';
 ?>
 
 <!DOCTYPE html>
@@ -16,12 +28,14 @@
         </header>
 
         <main>
-            MAIN
+            La somma di <?php echo $num; ?> e 3 è
+            <?php
+                echo sum($num, 3);
+            ?>
         </main>
 
-        <footer>
-            FOOTER
-        </footer>
-        
+        <?php
+            require_once __DIR__.'/partials/footer.php';
+        ?>
     </body>
 </html>
